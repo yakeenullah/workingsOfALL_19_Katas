@@ -1,0 +1,79 @@
+Explore the repo
+What work do you have in the working directory?
+What work do you have staged ?
+What does the commit log look like ?
+Notice that file.txt has some staged changes (i.e. changes in the index) and unstaged changes (changes in the working directory)
+
+Use git stash to stash your current work.
+Now, what work do you have in the working directory?
+What work do you have staged ?
+What does the commit log look like ?
+What does the stash list look like ?
+Fix the typos in bug.txt on master and commit your changes.
+Now to get back to your work, apply the stash to master.
+What work do you have in the working directory?
+What work do you have staged ?
+Oops. All our changes are unstaged now. This may be undesirable and unexpected
+
+Undo our changes with git reset --hard HEAD. This is an unsafe command as it will remove files from your index and working directory permanently, but we have our changes safely stashed so we're ok. Review the reset kata if you're unsure of what happens here.
+Apply the stash to master with the --index option.
+What work do you have in the working directory?
+What work do you have staged ?
+Ok, back to where we were!
+
+We won't need the stash anymore. Drop it.
+What does the stash list look like ?
+What does the commit log look like ?
+
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+        modified:   fix.txt
+
+
+$ git stash apply
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   bug.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+
+$ git stash apply --index
+error: Your local changes to the following files would be overwritten by merge:
+        bug.txt
+Please commit your changes or stash them before you merge.
+Aborting
+Index was not unstashed.
+
+
+$ git stash drop
+Dropped refs/stash@{0} (d68e81d7c32d8e722efd9ee719014230314441af)
+
+
+$ git log --oneline --all --graph
+*   9dc9a26 (refs/stash) WIP on master: 34b4705 add bug.txt
+|\
+| * 8252a10 index on master: 34b4705 add bug.txt
+|/
+* 34b4705 (HEAD -> master) add bug.txt
+* 27b3052 Initial commit
+
+
+$ git commit -m "changes done"
+[master 9c275cf] changes done
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+

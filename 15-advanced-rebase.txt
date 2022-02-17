@@ -1,0 +1,34 @@
+1. Explore the repo and the history so you know what happened
+$ git log --oneline
+712f51e (HEAD -> master) I forgot a semicolon
+fecca12 Test for feature hello world
+92fa03a Add doc - step 3
+7c3f4ea Add doc - step 2
+ffbcb6b Add doc - step 1
+c8eafb3 important secret
+4bcd364 debugging
+1a68d89 Really made the thingy done
+8e8676e Finished HW feature
+f1a4395 Helo Volrd feature
+cafa383 (tag: v0.0, origin/master) Initial commit
+
+
+2. Use git rebase --interactive v0.0 to let you edit the "recipe" for the entire feature development.
+$ git rebase --interactive v0.0
+You can amend the commit now, with
+
+  git commit --amend
+
+Once you are satisfied with your changes, run
+
+  git rebase --continue
+
+3. Clean up the history such that it actually makes sense. Try to use as many of the rebase "features" (e.g. reword, squash, fixup, drop) as possible. You decide yourself if you want to rewrite the whole thing in one go, or apply a few changes first, then run a new git rebase --interactive v0.0 to keep cleaning.
+
+
+
+
+$ git commit --amend
+[detached HEAD 204377d]  Finished Hello world feature
+  2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 other.code

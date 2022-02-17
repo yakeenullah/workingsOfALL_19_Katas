@@ -1,0 +1,168 @@
+Microsoft Windows [Version 10.0.22000.438]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>echo 2 > file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git diff
+diff --git a/1.basic-commit.txt b/1.basic-commit.txt
+deleted file mode 100644
+index e73330e..0000000
+--- a/1.basic-commit.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-This is my first commit . Hello yakin. Hello adding new Things yakin.
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git diff --staged
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git add file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git diff
+diff --git a/1.basic-commit.txt b/1.basic-commit.txt
+deleted file mode 100644
+index e73330e..0000000
+--- a/1.basic-commit.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-This is my first commit . Hello yakin. Hello adding new Things yakin.
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git diff --staged
+diff --git a/2/file.txt b/2/file.txt
+new file mode 100644
+index 0000000..8f6c1e5
+--- /dev/null
++++ b/2/file.txt
+@@ -0,0 +1 @@
++2
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>echo 3 > file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git diff
+diff --git a/1.basic-commit.txt b/1.basic-commit.txt
+deleted file mode 100644
+index e73330e..0000000
+--- a/1.basic-commit.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-This is my first commit . Hello yakin. Hello adding new Things yakin.
+diff --git a/2/file.txt b/2/file.txt
+index 8f6c1e5..d855592 100644
+--- a/2/file.txt
++++ b/2/file.txt
+@@ -1 +1 @@
+-2
++3
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git diff --staged
+diff --git a/2/file.txt b/2/file.txt
+new file mode 100644
+index 0000000..8f6c1e5
+--- /dev/null
++++ b/2/file.txt
+@@ -0,0 +1 @@
++2
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    ../1.basic-commit.txt
+        modified:   file.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../1/
+        ../All Katas/
+        ../stand.txt
+
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git restore --staged file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    ../1.basic-commit.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../1/
+        ./
+        ../All Katas/
+        ../stand.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git add file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git commit -m"Commiting after echo3"
+[main 0c61df6] Commiting after echo3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 2/file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git log
+commit 0c61df6c5c2ce1a1bb1b09fa23c7a5d0f7443fbf (HEAD -> main)
+Author: Mohd Yakeenullah Ansari <yakinullah786@gmail.com>
+Date:   Mon Feb 14 16:04:47 2022 +0530
+
+    Commiting after echo3
+
+commit d8a8cd289e2cb646c9383c85cc3a8f060b54cde8
+Author: Mohd Yakeenullah Ansari <yakinullah786@gmail.com>
+Date:   Sun Feb 13 23:42:22 2022 +0530
+
+    change again
+
+commit 2560d5f2a6c173351c4b88982e8607a84ab43626
+Author: Mohd Yakeenullah Ansari <yakinullah786@gmail.com>
+Date:   Sun Feb 13 23:39:54 2022 +0530
+
+    Added
+
+commit b6de6f719fd0c37a40c768fba1ecd80251348fba
+Author: Mohd Yakeenullah Ansari <yakinullah786@gmail.com>
+Date:   Sun Feb 13 23:24:55 2022 +0530
+
+    First
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>echo 4 > file,txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>echo 4 > file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    ../1.basic-commit.txt
+        modified:   file.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../1/
+        ../All Katas/
+        ../stand.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git restore file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\2>git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    ../1.basic-commit.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../1/
+        ../All Katas/
+        ../stand.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")

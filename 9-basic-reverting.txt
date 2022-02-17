@@ -1,0 +1,64 @@
+1.Use git log --decorate --oneline to look at the history
+$ git log --decorate --oneline
+4fff6aa (HEAD -> master) Overwrite greeting.txt
+9a8ff68 Add content to greeting.txt
+4bfb516 Add credentials to repository
+2111fa9 Add file greeting.txt
+
+Use cat to view the content of greeting.txt
+$ cat greeting.txt
+This should have been appended to the original content, rather than overwriting it.
+
+Use git revert on the newest commit, to remove the changes the last commit added
+Use git log --decorate --oneline to view the history
+$ git log --decorate --oneline
+025080a (HEAD -> master) Overwrite greeting.txt
+329cd65 Add content to greeting.txt
+b5a773b Add credentials to repository
+e6090b7 Add file greeting.txt
+
+Did the revert command add or remove a commit?
+Use cat to view the content of greeting.txt
+Use ls to see the content of the workspace
+$ ls
+credentials.txt  greeting.txt
+
+Use git log --decorate --oneline to find the sha of the commit adding credentials to the repository
+$ git log --decorate --oneline
+025080a (HEAD -> master) Overwrite greeting.txt
+329cd65 Add content to greeting.txt
+b5a773b Add credentials to repository
+e6090b7 Add file greeting.txt
+
+Use git revert to revert the commit that added the credentials
+Use git log --decorate --oneline to view the history
+Use ls to see the content of the workspace
+$ git show
+commit 025080aabee03926a251e8a4df7fe04601a479d5 (HEAD -> master)
+ 
+
+    Overwrite greeting.txt
+
+diff --git a/greeting.txt b/greeting.txt
+index 2bdd920..8a8069f 100644
+--- a/greeting.txt
++++ b/greeting.txt
+@@ -1 +1 @@
+-Original file content
++This should have been appended to the original content, rather than overwriting it.
+
+How many commits were added or changed by the last revert?
+Use git show with the sha of the commit you reverted to see that the credentials file is stilll in the history
+$ git show
+commit 025080aabee03926a251e8a4df7fe04601a479d5 (HEAD -> master)
+    Overwrite greeting.txt
+
+diff --git a/greeting.txt b/greeting.txt
+index 2bdd920..8a8069f 100644
+--- a/greeting.txt
++++ b/greeting.txt
+@@ -1 +1 @@
+-Original file content
++This should have been appended to the original content, rather than overwriting it.
+
+As you have now reverted the credentials file, so it is removed from your working directory, is it also removed from git?

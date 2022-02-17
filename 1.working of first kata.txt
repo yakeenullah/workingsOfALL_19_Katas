@@ -1,0 +1,109 @@
+Microsoft Windows [Version 10.0.22000.438]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git init
+Reinitialized existing Git repository in C:/Users/Yakeen/Desktop/Zemoso_Git_Katas/.git/
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   1.basic-commit.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git add .
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git commit -m "Added"
+[main 2560d5f] Added
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   1.basic-commit.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git add .
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git commit -m "change again"
+[main d8a8cd2] change again
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>git log
+commit d8a8cd289e2cb646c9383c85cc3a8f060b54cde8 (HEAD -> main)
+Author: Mohd Yakeenullah Ansari <yakinullah786@gmail.com>
+Date:   Sun Feb 13 23:42:22 2022 +0530
+
+    change again
+
+commit 2560d5f2a6c173351c4b88982e8607a84ab43626
+Author: Mohd Yakeenullah Ansari <yakinullah786@gmail.com>
+Date:   Sun Feb 13 23:39:54 2022 +0530
+
+    Added
+
+commit b6de6f719fd0c37a40c768fba1ecd80251348fba
+Author: Mohd Yakeenullah Ansari <yakinullah786@gmail.com>
+Date:   Sun Feb 13 23:24:55 2022 +0530
+
+    First
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

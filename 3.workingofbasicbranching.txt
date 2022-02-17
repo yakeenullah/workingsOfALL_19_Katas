@@ -1,0 +1,138 @@
+Microsoft Windows [Version 10.0.22000.438]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git branch
+* main
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git branch mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git branch
+* main
+  mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git switch mybranch
+Switched to branch 'mybranch'
+D       1.basic-commit.txt
+M       2/file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git status
+On branch mybranch
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    ../1.basic-commit.txt
+        modified:   ../2/file.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../1/
+        ../2/file
+        ../2/git
+        ../2/main)
+        ./
+        ../All Katas/
+        ../stand.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git switch main
+Switched to branch 'main'
+D       1.basic-commit.txt
+M       2/file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    ../1.basic-commit.txt
+        modified:   ../2/file.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../1/
+        ../2/file
+        ../2/git
+        ../2/main)
+        ./
+        ../All Katas/
+        ../stand.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git switch mybranch
+Switched to branch 'mybranch'
+D       1.basic-commit.txt
+M       2/file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git branch
+  main
+* mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git add file1.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git commit -m "Basic branching"
+[mybranch e0c61d8] Basic branching
+ 1 file changed, 1 insertion(+)
+ create mode 100644 3/file1.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git log --oneline --graph
+* e0c61d8 (HEAD -> mybranch) Basic branching
+* 0c61df6 (main) Commiting after echo3
+* d8a8cd2 change again
+* 2560d5f Added
+* b6de6f7 First
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git add file2.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git commit -m "Basic branching2"
+[mybranch 510faed] Basic branching2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 3/file2.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git log --oneline --graph
+* 510faed (HEAD -> mybranch) Basic branching2
+* e0c61d8 Basic branching
+* 0c61df6 (main) Commiting after echo3
+* d8a8cd2 change again
+* 2560d5f Added
+* b6de6f7 First
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git log --oneline --graph --all
+* 510faed (HEAD -> mybranch) Basic branching2
+* e0c61d8 Basic branching
+* 0c61df6 (main) Commiting after echo3
+* d8a8cd2 change again
+* 2560d5f Added
+* b6de6f7 First
+*   e5c5e1e (origin/main) Merge pull request #1 from yakeenullah/new-branch
+|\
+| * b12c206 (origin/new-branch) changed Torvalds by yakin
+|/
+* ca4c384 changed to to yakin
+* 4cb123c text created
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git switch mybranch
+Already on 'mybranch'
+D       1.basic-commit.txt
+M       2/file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git diff mybranch master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>git diff mybranch main
+diff --git a/3/file1.txt b/3/file1.txt
+deleted file mode 100644
+index ea6e382..0000000
+--- a/3/file1.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-Learning basic branching
+\ No newline at end of file
+diff --git a/3/file2.txt b/3/file2.txt
+deleted file mode 100644
+index e69de29..0000000
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\3>

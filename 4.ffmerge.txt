@@ -1,0 +1,120 @@
+Microsoft Windows [Version 10.0.22000.438]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git branch
+  main
+* mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git switch main
+Deletion of directory '3' failed. Should I try again? (y/n) n
+Switched to branch 'main'
+D       1.basic-commit.txt
+M       2/file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git branch
+* main
+  mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git branch feature/uppercase
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git switch feature/uppercase
+Switched to branch 'feature/uppercase'
+D       1.basic-commit.txt
+M       2/file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git branch
+* feature/uppercase
+  main
+  mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git status
+On branch feature/uppercase
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    ../1.basic-commit.txt
+        modified:   ../2/file.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../1/
+        ../2/file
+        ../2/git
+        ../2/main)
+        ./
+        ../All Katas/
+        ../stand.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git add feature/uppercase
+warning: could not open directory '4/feature/': No such file or directory
+fatal: pathspec 'feature/uppercase' did not match any files
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git add greetings.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git commit -m "greeting everyone"
+[feature/uppercase c46d2af] greeting everyone
+ 1 file changed, 1 insertion(+)
+ create mode 100644 4/greetings.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git branch
+* feature/uppercase
+  main
+  mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git log --oneline --graph --all
+* c46d2af (HEAD -> feature/uppercase) greeting everyone
+| * 510faed (mybranch) Basic branching2
+| * e0c61d8 Basic branching
+|/
+* 0c61df6 (main) Commiting after echo3
+* d8a8cd2 change again
+* 2560d5f Added
+* b6de6f7 First
+*   e5c5e1e (origin/main) Merge pull request #1 from yakeenullah/new-branch
+|\
+| * b12c206 (origin/new-branch) changed Torvalds by yakin
+|/
+* ca4c384 changed to to yakin
+* 4cb123c text created
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git switch main
+Switched to branch 'main'
+D       1.basic-commit.txt
+M       2/file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git branch
+  feature/uppercase
+* main
+  mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>cat greetings.txt
+'cat' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git diff main feature/uppercase
+diff --git a/4/greetings.txt b/4/greetings.txt
+new file mode 100644
+index 0000000..13c1cb3
+--- /dev/null
++++ b/4/greetings.txt
+@@ -0,0 +1 @@
++HI EVERYONE,  WELCOME
+\ No newline at end of file
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git merge feature/uppercase
+Updating 0c61df6..c46d2af
+Fast-forward
+ 4/greetings.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 4/greetings.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git branch -d feature/uppercase
+Deleted branch feature/uppercase (was c46d2af).
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>git branch
+* main
+  mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\4>

@@ -1,0 +1,30 @@
+See which tags that were created.
+$ git tag
+dummy
+dummy2
+
+Make a new commit, and introduce a new annotated tag.
+$ git tag -a new_tag
+
+$ git tag --list
+dummy
+dummy2
+new_tag
+
+We made a couple of commits. Can you add a tag to an arbitrary commit?
+The exercise repository contains an annotated tag. What's the message?
+Maybe not all of the tags are needed. Delete some of them.
+$ git tag -d dummy
+Deleted tag 'dummy' (was c35c220)
+
+commit ffe85d4740ce62c757818b8e261c3a2417867f75 (HEAD -> git-tag, tag: new_tag, tag: dummy2, master)
+ 
+    adding more content to dummy.txt
+
+diff --git a/dummy.txt b/dummy.txt
+index 421376d..bb98416 100644
+--- a/dummy.txt
++++ b/dummy.txt
+@@ -1 +1 @@
+-dummy
++dummy2

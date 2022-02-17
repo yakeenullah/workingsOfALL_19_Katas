@@ -1,0 +1,43 @@
+Use git log --oneline --graph to view the commits
+git log --oneline --graph
+* 1b1e1ae (HEAD -> master) file7
+* cd37461 file6
+* b22c5bd file2
+* 33d1fad file5
+* 41f466b file4
+* 6cea5ed file3
+* 35fa56f file8
+* a4f279b file9
+* c2b30ef file1
+
+Also try git reflog to view the commits. git reflog defaults to git reflog show and this is an alias for git log -g --abbrev-commit --pretty=oneline
+$ git reflog show
+1b1e1ae (HEAD -> master) HEAD@{0}: commit: file7
+cd37461 HEAD@{1}: commit: file6
+b22c5bd HEAD@{2}: commit: file2
+33d1fad HEAD@{3}: commit: file5
+41f466b HEAD@{4}: commit: file4
+6cea5ed HEAD@{5}: commit: file3
+35fa56f HEAD@{6}: commit: file8
+a4f279b HEAD@{7}: commit: file9
+c2b30ef HEAD@{8}: commit: file1
+
+
+Use git rebase -i <after-this-commit> to reorder the commits. There are commments in the file you edit that explain the commands available.
+$ git rebase -i
+Successfully rebased and updated refs/heads/master.
+
+
+Use git log --oneline --graph to view the result
+$ git log
+commit d03a313c3a7521486672655a74fee027ae93c0bc
+
+    file1
+    file2
+    file3
+    file4
+    file5
+    filr6
+    file7
+    file8
+    file9

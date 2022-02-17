@@ -1,0 +1,113 @@
+Microsoft Windows [Version 10.0.22000.438]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git branch greeting
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git branch
+  greeting
+* main
+  mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git switch greeting
+Switched to branch 'greeting'
+D       1.basic-commit.txt
+M       2/file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git branch
+* greeting
+  main
+  mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git add greeting.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git commit -m "favoriteGreeting"
+[greeting a7b1a80] favoriteGreeting
+ 1 file changed, 1 insertion(+)
+ create mode 100644 5/greeting.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git switch main
+Switched to branch 'main'
+D       1.basic-commit.txt
+M       2/file.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git branch
+  greeting
+* main
+  mybranch
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git add README.md
+fatal: pathspec 'README.md' did not match any files
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>README.md.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git add README.md.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git commit -m "Creating README file"
+[main 6e9dcd4] Creating README file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 5/README.md.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git log --oneline --graph --all
+* 6e9dcd4 (HEAD -> main) Creating README file
+| * a7b1a80 (greeting) favoriteGreeting
+|/
+* c46d2af greeting everyone
+| * 510faed (mybranch) Basic branching2
+| * e0c61d8 Basic branching
+|/
+* 0c61df6 Commiting after echo3
+* d8a8cd2 change again
+* 2560d5f Added
+* b6de6f7 First
+*   e5c5e1e (origin/main) Merge pull request #1 from yakeenullah/new-branch
+|\
+| * b12c206 (origin/new-branch) changed Torvalds by yakin
+|/
+* ca4c384 changed to to yakin
+* 4cb123c text created
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git diff main greeting
+diff --git a/5/README.md.txt b/5/README.md.txt
+deleted file mode 100644
+index 5845fda..0000000
+--- a/5/README.md.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-This file contains information about the repository.
+\ No newline at end of file
+diff --git a/5/greeting.txt b/5/greeting.txt
+new file mode 100644
+index 0000000..4f99fb8
+--- /dev/null
++++ b/5/greeting.txt
+@@ -0,0 +1 @@
++My favorite greeting
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git merge greeting
+Merge made by the 'ort' strategy.
+ 5/greeting.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 5/greeting.txt
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>git log --oneline --graph --all
+*   466848d (HEAD -> main) Merge branch 'greeting'
+|\
+| * a7b1a80 (greeting) favoriteGreeting
+* | 6e9dcd4 Creating README file
+|/
+* c46d2af greeting everyone
+| * 510faed (mybranch) Basic branching2
+| * e0c61d8 Basic branching
+|/
+* 0c61df6 Commiting after echo3
+* d8a8cd2 change again
+* 2560d5f Added
+* b6de6f7 First
+*   e5c5e1e (origin/main) Merge pull request #1 from yakeenullah/new-branch
+|\
+| * b12c206 (origin/new-branch) changed Torvalds by yakin
+|/
+* ca4c384 changed to to yakin
+* 4cb123c text created
+
+C:\Users\Yakeen\Desktop\Zemoso_Git_Katas\5>

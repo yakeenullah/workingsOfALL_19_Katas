@@ -1,0 +1,19 @@
+Squash the five relevant commits into one and make a good commit message (see Further information).
+$ git rebase -i HEAD~5
+[detached HEAD c7286c0] Meaningful commit msg
+  1 file changed, 5 insertions(+)
+ create mode 100644 file.txt
+Successfully rebased and updated refs/heads/master.
+
+How does git log look now?
+$ git log
+commit c7286c0fabed770dc11cab7a116bca795bae1ae3 (HEAD -> master)
+ 
+
+    Meaningful commit msg
+
+commit c95a1023483fe41f9747b9f43aec93b489b20bc5
+
+    initial file
+
+Clean up the \n characters inside file.txt without adding to the commit history.

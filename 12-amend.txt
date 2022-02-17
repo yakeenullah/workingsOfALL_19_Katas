@@ -1,0 +1,60 @@
+What does git status tell us?
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bar.txt
+
+What does git log -p tell us?
+$ git log -p
+commit f4ec4f04d1680f6d3ade4bf31c85f53ebda9e51e (HEAD -> master)
+    feature 73
+
+diff --git a/foo.txt b/foo.txt
+new file mode 100644
+index 0000000..257cc56
+--- /dev/null
++++ b/foo.txt
+@@ -0,0 +1 @@
++foo
+
+Stage the addition of bar.txt
+$ git add bar.txt
+warning: LF will be replaced by CRLF in bar.txt.
+The file will have its original line endings in your working directory
+
+
+Run git commit --amend
+$ git commit --amend
+[master d18e779] feature 73
+ 2 files changed, 2 insertions(+)
+ create mode 100644 bar.txt
+ create mode 100644 foo.txt
+
+What happened? What does git log -p tell us?
+$ git log -p
+commit d18e7790806ca544f4ba20a64b06a2f89aa2061a (HEAD -> master)
+
+diff --git a/bar.txt b/bar.txt
+new file mode 100644
+index 0000000..5716ca5
+--- /dev/null
++++ b/bar.txt
+@@ -0,0 +1 @@
++bar
+diff --git a/foo.txt b/foo.txt
+new file mode 100644
+index 0000000..257cc56
+--- /dev/null
++++ b/foo.txt
+@@ -0,0 +1 @@
++foo
+
+What happens if you run git commit --amend again?
+$ git commit --amend
+[master be764e4] feature 73
+ Date: Fri Feb 4 14:00:33 2022 +0530
+ 2 files changed, 2 insertions(+)
+ create mode 100644 bar.txt
+ create mode 100644 foo.txt
+

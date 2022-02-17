@@ -1,0 +1,56 @@
+1.Which branches exist?
+$ git branch
+* master
+  uppercase
+
+2.Look at the log for the master branch
+$ git log
+commit 486a9d29ac90e894021472cd2b010e8ef4522269 (HEAD -> master)
+Author: Katyayni Tripathi <katyayni.tripathi@zemosolabs.com>
+Date:   Fri Feb 4 11:49:55 2022 +0530
+
+    Add readme
+
+commit d46ac1e244404cc8efea4e215ec1811565aca035
+Author: Katyayni Tripathi <katyayni.tripathi@zemosolabs.com>
+Date:   Fri Feb 4 11:49:55 2022 +05
+
+
+3.Check out the uppercase branch
+$ git log --oneline --graph --all
+* 486a9d2 (master) Add readme
+| * e481430 (HEAD -> uppercase) Change greeting to uppercase
+|/
+* d46ac1e Add content to greeting.txt
+* 5acf215 Add file greeting.txt
+
+
+4.How does the log compare to the log on the master branch?
+5.Rebase your uppercase branch with the master (git rebase master)
+$ git rebase master
+Successfully rebased and updated refs/heads/uppercase.
+
+6.What did just happen? Draw it!
+7.Now switch to the master branch
+8.Merge uppercase into master
+$ git merge uppercase
+Updating 486a9d2..d7ffa83
+Fast-forward
+ greeting.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+9.What does the log look like now?
+$ git log
+commit d7ffa83a73c71fa563de9a5224064d35f6d371d9 (HEAD -> master, uppercase)
+Author: Katyayni Tripathi <katyayni.tripathi@zemosolabs.com>
+Date:   Fri Feb 4 11:49:55 2022 +0530
+
+    Change greeting to uppercase
+
+commit 486a9d29ac90e894021472cd2b010e8ef4522269
+Author: Katyayni Tripathi <katyayni.tripathi@zemosolabs.com>
+Date:   Fri Feb 4 11:49:55 2022 +0530
+
+    Add readme
+
+commit d46ac1e244404cc8efea4e215ec1811565aca035

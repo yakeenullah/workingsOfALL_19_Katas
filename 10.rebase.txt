@@ -1,0 +1,83 @@
+How does your working directory look like?
+What does your log look like? What does your stage look like?
+$ git log
+commit 900f41aa92f5411992ddec1ddd19f69fa10ea21c (HEAD -> master)
+  10
+
+commit c96507aba31bc85fc7e1d3335512586e50968248
+
+    9
+
+commit 995bf8551a258da6456178b0c53505212100be73
+
+    8
+
+commit 2e289db725ce04350bf7f530dc773ce1b0102904
+
+Try to run git reset --soft HEAD~1
+What happens to your working directory, your log and your stage?
+$ git log
+commit c96507aba31bc85fc7e1d3335512586e50968248 (HEAD -> master)
+    9
+
+commit 995bf8551a258da6456178b0c53505212100be73
+    8
+
+commit 2e289db725ce04350bf7f530dc773ce1b0102904
+
+    7
+
+commit 3e38b5edf2b9de00c880388f0285f89c6ae60bc2
+
+
+
+Run git reset --mixed HEAD~1
+What happens to your working directory, your log and your stage?
+$ git log
+commit 995bf8551a258da6456178b0c53505212100be73 (HEAD -> master)
+
+    8
+
+commit 2e289db725ce04350bf7f530dc773ce1b0102904
+
+    7
+
+commit 3e38b5edf2b9de00c880388f0285f89c6ae60bc2
+
+    6
+
+commit 9d3023c9f6669e1f2def346d9a34ef94f43d9928
+
+
+
+
+Run git reset --hard HEAD~1
+What happens to your working directory, your log and your stage?
+$ git reset --hard HEAD~1
+HEAD is now at 2e289db 7
+
+
+Now try to use git revert HEAD~1
+$ git revert HEAD~1
+Removing 6.txt
+[master cb8b90c] Revert "6"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 6.txt
+
+What happens to your working directory, your log and your stage?
+$ git log
+commit cb8b90cd462532e226d63e8b8ffe6b7e6bc753ae (HEAD -> master)
+
+    Revert "6"
+
+    This reverts commit 3e38b5edf2b9de00c880388f0285f89c6ae60bc2.
+
+commit 2e289db725ce04350bf7f530dc773ce1b0102904
+
+    7
+
+commit 3e38b5edf2b9de00c880388f0285f89c6ae60bc2
+
+    6
+
+commit 9d3023c9f6669e1f2def346d9a34ef94f43d9928
